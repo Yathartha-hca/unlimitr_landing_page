@@ -412,9 +412,12 @@ var wp_ajax_object = {"ajax_url":"https://wellness.fitelo.co/wp-admin/admin-ajax
           }
         },
         {
-          breakpoint: 600,
+          breakpoint: 768,
           settings: {
-            slidesToShow: 1
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: false,
+            variableWidth: false
           }
         }
       ]
@@ -447,6 +450,7 @@ margin:10px 0px 15px 0px;
   margin: 10px;
   border-radius: 10px;
   width: 100%;
+  box-sizing: border-box;
 }
 .inner-section-4-wrapper {
   display: flex;
@@ -2712,6 +2716,7 @@ letter-spacing: 0%;
     }
     .inner-logo-image{
         width: 20%;
+        display: none; /* Hide logo on desktop - header logo is visible */
     }
     .inner-heading-1{
         line-height: 60px;
@@ -4056,6 +4061,48 @@ font-size: 11px;
     .inner-section-4-wrapper {
         padding: 0;
         margin: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    /* Section 4 - Slider Cards - Full Width on Mobile */
+    #transformSlider {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    #transformSlider .slick-list {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible;
+    }
+    
+    #transformSlider .slick-track {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Full width card on mobile - no margins */
+    #transformSlider .inner-section-4-content-div {
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 20px !important;
+    }
+    
+    /* Ensure slick slides are full width on mobile */
+    #transformSlider .slick-slide {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    #transformSlider .slick-slide > div {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
     
     /* Section 5 - A Plan That Fits Your Life - FIXED */
@@ -4385,7 +4432,7 @@ font-size: 11px;
     .faqs,
     .section-10 {
         padding-bottom: 100px !important;
-    }
+}
 }
 .inner-section-9-ul {
     list-style: none !important;
